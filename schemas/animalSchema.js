@@ -8,6 +8,6 @@ export default gql`
   type Animal {
     id: ID
     animalName: String
-    species: ID
+    species: Species
   }
 `;

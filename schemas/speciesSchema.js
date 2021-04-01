@@ -8,6 +8,6 @@ export default gql`
   type Species {
     id: ID
     speciesName: String
-    category: ID
+    category: Category
   }
 `;
