@@ -5,7 +5,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectMongo from "./db/db.js";
 
-dotenc.config();
+dotenv.config();
 
 (async () => {
   try {
