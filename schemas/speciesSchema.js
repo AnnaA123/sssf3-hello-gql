@@ -8,6 +8,6 @@ export default gql`
   }
 
   extend type Mutation {
-    addSpecies(speciesName: String, category: ID!): Species
+    addSpecies(speciesName: String!, category: ID!): Species
   }
 `;
