@@ -7,8 +7,10 @@ const categoryData = [
 
 export default {
   Species: {
-    categories: (parent, args) => {
-      return categoryData.findById(parent.categoryName);
+    category: (parent, args) => {
+      return categoryData.filter(
+        (category) => category.id === parent.category
+      )[0];
     },
   },
 };

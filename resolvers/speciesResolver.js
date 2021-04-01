@@ -9,7 +9,7 @@ const speciesData = [
 export default {
   Animal: {
     species: (parent, args) => {
-      return speciesData.findById(parent.species);
+      return speciesData.filter((species) => species.id === parent.species)[0];
     },
   },
 };
