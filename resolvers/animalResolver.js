@@ -12,5 +12,12 @@ export default {
       const newAnimal = new Animal(args);
       return newAnimal.save();
     },
+    modifyAnimal: (parent, args) => {
+      const data = {
+        animalName: args.animalName,
+        species: args.species,
+      };
+      return Animal.findByIdAndUpdate(args.id, data);
+    },
   },
 };
