@@ -3,7 +3,7 @@ import Animal from "../models/animalModel.js";
 export default {
   Query: {
     animals: (parent, args) => {
-      return animalData;
+      return Animal.find();
     },
   },
   Mutation: {
