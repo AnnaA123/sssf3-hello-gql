@@ -2,8 +2,11 @@ import Animal from "../models/animalModel.js";
 
 export default {
   Query: {
-    animals: (parent, args) => {
+    animals: () => {
       return Animal.find();
+    },
+    animal: (parent, args) => {
+      return Animal.findById(args.id);
     },
   },
   Mutation: {
