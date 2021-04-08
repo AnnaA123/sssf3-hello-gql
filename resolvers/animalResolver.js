@@ -10,11 +10,22 @@ export default {
     },
   },
   Mutation: {
-    addAnimal: (parent, args) => {
-      console.log("args: ", args);
+    addAnimal: (parent, args, { user }) => {
+      console.log("args and context: ", args, user);
+      if (!user) {
+        return false;
+      }
       const newAnimal = new Animal(args);
       return newAnimal.save();
     },
+    // ^^^ same thing as below but with object destructuring
+    /*
+    addAnimal: (parent, args, context) => {
+      console.log("args and context: ", args, context.user);
+      const newAnimal = new Animal(args);
+      return newAnimal.save();
+    },
+    */
     modifyAnimal: (parent, args) => {
       const data = {
         animalName: args.animalName,
