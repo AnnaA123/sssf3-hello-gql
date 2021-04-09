@@ -26,7 +26,7 @@ passport.use(
       // delete strippedUser.password;
       // console.log("deleted pwd", strippedUser);
 
-      if (username !== "foo" && password !== "bar") {
+      if (username !== "foo" || password !== "bar") {
         return done(null, false, { message: "Incorrect credentials." });
       }
       const strippedUser = { id: 1, username: "foo" };
