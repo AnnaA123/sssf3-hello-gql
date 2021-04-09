@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import passport from "./strategy.js";
 
 const login = (req, res) => {
-  return new Promise((resole, reject) => {
+  return new Promise((resolve, reject) => {
     console.log("rq", req.body);
     passport.authenticate(
       "local",
