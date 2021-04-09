@@ -1,9 +1,9 @@
 "use strict";
-const passport = require("passport");
-const Strategy = require("passport-local").Strategy;
+import passport from "passport";
+import { Strategy } from "passport-local";
 // const bcrypt = require('bcrypt');
 // const userModel = require("../models/user");
-const passportJWT = require("passport-jwt");
+import passportJWT from "passport-jwt";
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 
@@ -63,4 +63,4 @@ passport.use(
   )
 );
 
-module.exports = passport;
+export default passport;
