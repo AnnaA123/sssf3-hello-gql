@@ -31,4 +31,15 @@ const login = (req, res) => {
   });
 };
 
-export { login };
+const checkAuth = (req, res) => {
+  return new Promise((resolve, reject) => {
+    passport.authenticate("jwt", (err, user) => {
+      if (err || !user) {
+        resolve(false);
+      }
+      resolve(user);
+    })(req, res);
+  });
+};
+
+export { login, checkAuth };

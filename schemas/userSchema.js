@@ -8,5 +8,6 @@ export default gql`
   type User {
     id: ID
     username: String
+    token: String
   }
 `;
