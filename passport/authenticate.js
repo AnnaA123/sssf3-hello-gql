@@ -28,6 +28,4 @@ const login = (req, res) => {
   )(req, res);
 };
 
-module.exports = {
-  login,
-};
+export { login };

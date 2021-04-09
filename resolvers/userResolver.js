@@ -1,4 +1,5 @@
 import { AuthenticationError } from "apollo-server-express";
+import { login } from "../passport/authenticate.js";
 
 export default {
   Query: {
