@@ -8,11 +8,15 @@ import { checkAuth } from "./passport/authenticate.js";
 import localhost from "./security/localhost.js";
 import production from "./security/production.js";
 
+// don't do this here
+// import bcrypt from "bcrypt";
+
 dotenv.config();
 /*
 import https from "https";
 import http from "http";
 import fs from "fs";
+import { bcrypt } from 'bcrypt';
 
 const sslkey = fs.readFileSync("../ssl-key.pem");
 const sslcert = fs.readFileSync("../ssl-cert.pem");
@@ -46,6 +50,14 @@ const options = {
       },
     });
 
+    const saltRound = 12; //okayish in 2021
+    // bcrypt test (don't actually do it here)
+    /*
+    // inside your user create/update async function
+    const myPwd = "bar";
+    const hash = await bcrypt.hash(myPwd, saltRound);
+    console.log("hashed pwd", hash);
+*/
     const app = express();
 
     server.applyMiddleware({ app });

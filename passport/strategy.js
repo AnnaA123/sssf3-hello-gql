@@ -1,7 +1,7 @@
 "use strict";
 import passport from "passport";
 import { Strategy } from "passport-local";
-// const bcrypt = require('bcrypt');
+import bcrypt from "bcrypt";
 // const userModel = require("../models/user");
 import passportJWT from "passport-jwt";
 const JWTStrategy = passportJWT.Strategy;
