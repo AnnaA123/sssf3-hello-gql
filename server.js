@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import connectMongo from "./db/db.js";
 import { checkAuth } from "./passport/authenticate.js";
 import localhost from "./security/localhost.js";
+import production from "./security/production.js";
 
 dotenv.config();
 /*
@@ -51,7 +52,7 @@ const options = {
 
     process.env.NODE_ENV = process.env.NODE_ENV || "development";
     if (process.env.NODE_ENV === "production") {
-      // soon
+      production(app, 3000);
     } else {
       localhost(app, 8000, 3000);
     }
