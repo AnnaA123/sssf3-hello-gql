@@ -7,6 +7,7 @@ import connectMongo from "./db/db.js";
 import { checkAuth } from "./passport/authenticate.js";
 import localhost from "./security/localhost.js";
 import production from "./security/production.js";
+import helmet from "helmet";
 
 // don't do this here
 // import bcrypt from "bcrypt";
@@ -59,6 +60,7 @@ const options = {
     console.log("hashed pwd", hash);
 */
     const app = express();
+    app.use(helmet());
 
     server.applyMiddleware({ app });
 
