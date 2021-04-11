@@ -26,7 +26,13 @@ passport.use(
       // delete strippedUser.password;
       // console.log("deleted pwd", strippedUser);
 
-      if (username !== "foo" || password !== "bar") {
+      // read from database. hash of "bar":
+      const pwdFromDB =
+        "$2b$12$CdgwPNn4IoPh6F7EmKA5/OAotiP5nP2EXIhSMIAJTyMQGCEZrVxaq";
+      const pwFromWeb = "bar";
+      const validate = await bcrypt.compare(pwFromWeb, pwdFromDB);
+
+      if (username !== "foo" || !validate) {
         return done(null, false, { message: "Incorrect credentials." });
       }
       const strippedUser = { id: 1, username: "foo" };
