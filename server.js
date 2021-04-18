@@ -60,7 +60,7 @@ const options = {
     console.log("hashed pwd", hash);
 */
     const app = express();
-    app.use(helmet());
+    // app.use(helmet());
 
     server.applyMiddleware({ app });
 
